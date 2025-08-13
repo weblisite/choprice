@@ -16,41 +16,46 @@ const PORT = process.env.PORT || 3000;
 // Initialize real-time service
 realtimeService.initialize(server);
 
-// Configure web-push
-if (process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
-  webpush.setVapidDetails(
-    'mailto:support@choprice.co.ke',
-    process.env.VAPID_PUBLIC_KEY,
-    process.env.VAPID_PRIVATE_KEY
-  );
-  console.log('✅ Push notifications configured');
+// Configure web-push (safe)
+const WEB_PUSH_ENABLED = process.env.WEB_PUSH_ENABLED !== 'false';
+if (WEB_PUSH_ENABLED && process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
+	try {
+		webpush.setVapidDetails(
+			'mailto:support@choprice.co.ke',
+			process.env.VAPID_PUBLIC_KEY,
+			process.env.VAPID_PRIVATE_KEY
+		);
+		console.log('✅ Push notifications configured');
+	} catch (err) {
+		console.warn('⚠️  Invalid VAPID keys provided; push notifications disabled:', err.message);
+	}
 } else {
-  console.log('⚠️  Push notifications disabled - VAPID keys not configured');
+	console.log('⚠️  Push notifications disabled - VAPID keys not configured or WEB_PUSH_ENABLED=false');
 }
 
 // Database connection
 const sql = process.env.DATABASE_URL ? 
-  neon(process.env.DATABASE_URL) : 
-  neon('postgresql://placeholder:placeholder@localhost:5432/placeholder');
+	neon(process.env.DATABASE_URL) : 
+	neon('postgresql://placeholder:placeholder@localhost:5432/placeholder');
 
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL,
-    process.env.ADMIN_URL,
-    process.env.RIDER_URL,
-    'http://localhost:3001',
-    'http://localhost:3002',
-    'http://localhost:3003'
-  ],
-  credentials: true
+	origin: [
+		process.env.FRONTEND_URL,
+		process.env.ADMIN_URL,
+		process.env.RIDER_URL,
+		'http://localhost:3001',
+		'http://localhost:3002',
+		'http://localhost:3003'
+	],
+	credentials: true
 }));
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 100 // limit each IP to 100 requests per windowMs
 });
 app.use('/api/', limiter);
 
