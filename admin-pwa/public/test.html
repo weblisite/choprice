@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; border: 1px solid #c3e6cb; }
+        .warning { background-color: #fff3cd; border: 1px solid #ffeaa7; }
+        .error { background-color: #f8d7da; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Choprice Admin Dashboard Test</h1>
+    
+    <div class="status success">
+        ✅ Admin PWA is running on port 3002
+    </div>
+    
+    <div class="status success">
+        ✅ HTML is being served correctly
+    </div>
+    
+    <h2>Troubleshooting Steps:</h2>
+    <ol>
+        <li><strong>Check Authentication:</strong> Make sure you're signed in to Clerk</li>
+        <li><strong>Check Console:</strong> Open browser dev tools and check for JavaScript errors</li>
+        <li><strong>Check Network:</strong> Verify API calls are working in Network tab</li>
+        <li><strong>Try Different Routes:</strong>
+            <ul>
+                <li><a href="http://localhost:3002/">Root Dashboard</a></li>
+                <li><a href="http://localhost:3002/dashboard">Dashboard Route</a></li>
+                <li><a href="http://localhost:3002/login">Login Page</a></li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>Expected Dashboard Features:</h2>
+    <ul>
+        <li>Debug panel showing data status</li>
+        <li>4 analytics cards with metrics</li>
+        <li>Interactive charts (Line, Doughnut, Bar)</li>
+        <li>Connection status alert</li>
+        <li>Quick stats grid</li>
+    </ul>
+    
+    <h2>If Dashboard Still Blank:</h2>
+    <p>The dashboard should now show either:</p>
+    <ul>
+        <li><strong>Demo data</strong> with charts and metrics, OR</li>
+        <li><strong>Debug warning</strong> explaining what's wrong, OR</li>
+        <li><strong>Loading spinner</strong> with debug info</li>
+    </ul>
+    
+    <div class="status warning">
+        ⚠️ If you still see a blank screen, check the browser console for JavaScript errors
+    </div>
+    
+    <script>
+        console.log('Admin Dashboard Test Page Loaded');
+        console.log('Current URL:', window.location.href);
+        console.log('User Agent:', navigator.userAgent);
+    </script>
+</body>
+</html>

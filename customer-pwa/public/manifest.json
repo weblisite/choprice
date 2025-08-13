@@ -1,0 +1,29 @@
+{
+  "short_name": "Choprice",
+  "name": "Choprice - Premium Rice Delivery",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ff6b35",
+  "background_color": "#ffffff",
+  "description": "Premium rice dishes delivered fresh to your office in Nairobi",
+  "categories": ["food", "delivery", "business"],
+  "lang": "en",
+  "orientation": "portrait-primary"
+}

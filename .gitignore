@@ -1,0 +1,34 @@
+# Node
+node_modules/
+**/node_modules/
+.npmrc
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Builds
+build/
+**/build/
+dist/
+**/dist/
+coverage/
+
+# Env
+.env
+.env.*
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
+
+# CRA
+*.cache
+.eslintcache
+
+# Misc
+*.log
+*.pid
+
+# Cache directories
+**/.cache/

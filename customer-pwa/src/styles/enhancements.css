@@ -1,0 +1,213 @@
+/* Bootstrap-compatible enhancements for Choprice */
+
+/* Spinner animation for React Icons */
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced menu item hover effects */
+.menu-item {
+  transition: all 0.3s ease;
+  border: 1px solid #dee2e6;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  border-color: #0d6efd;
+}
+
+/* Enhanced empty state */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.empty-state-title {
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-description {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* Featured item styling */
+.border-warning {
+  position: relative;
+}
+
+.border-warning::before {
+  content: "⭐ Featured";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background: #ffc107;
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+/* Enhanced loading skeleton styling */
+.react-loading-skeleton {
+  border-radius: 0.375rem;
+}
+
+/* Button hover effects */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Category filter enhancements */
+.btn-outline-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(13, 110, 253, 0.25);
+}
+
+/* Price tag styling */
+.price-tag {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+/* Category badge styling */
+.category-badge {
+  background: #f8f9fa;
+  color: #495057;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #dee2e6;
+}
+
+/* Menu item image enhancements */
+.menu-item-image {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-item-image {
+  transform: scale(1.05);
+}
+
+/* AOS animation overrides for better performance */
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* Add-ons component styles */
+.add-on-card {
+  transition: all 0.3s ease;
+  border: 1px solid #dee2e6;
+}
+
+.add-on-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-color: #0d6efd;
+}
+
+.price-badge {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-display {
+  font-weight: 600;
+  min-width: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.total-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.add-on-card .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.add-on-card .card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Category badges */
+.badge.bg-success {
+  background-color: #28a745 !important;
+}
+
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .empty-state {
+    padding: 2rem 1rem;
+  }
+  
+  .empty-state-icon {
+    font-size: 3rem;
+  }
+  
+  .menu-item:hover {
+    transform: none;
+  }
+  
+  .add-on-card:hover {
+    transform: none;
+  }
+  
+  .quantity-controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

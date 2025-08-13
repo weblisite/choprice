@@ -1,0 +1,98 @@
+/* Admin PWA Styles */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Admin specific styles */
+.admin-layout {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  background-color: white;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  min-height: 100vh;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #EF4444 !important;
+}
+
+.nav-link {
+  color: #6c757d !important;
+}
+
+.nav-link:hover {
+  color: #EF4444 !important;
+}
+
+.nav-link.active {
+  color: #EF4444 !important;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #EF4444;
+  border-color: #EF4444;
+}
+
+.btn-primary:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.text-primary {
+  color: #EF4444 !important;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.order-card {
+  border-left: 4px solid #EF4444;
+}
+
+.status-badge {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
